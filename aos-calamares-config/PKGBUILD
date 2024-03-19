@@ -1,0 +1,23 @@
+# Maintainer: Luna Petersson <contact@rinnray.dev>
+
+pkgname=aos-calamares-config
+_destname="/etc"
+pkgver=24.3
+pkgrel=1
+pkgdesc="Calamares for AmethystOS"
+arch=('any')
+url="https://github.com/RinnOS/${pkgname}"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=()
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+
+source=(${pkgname}::"git+$url.git")
+sha256sums=('SKIP')
+
+package() {
+    install -dm755 ${pkgdir}${_destname}
+    cp -r ${srcdir}/${pkgname}${_destname}/* ${pkgdir}${_destname}
+}
