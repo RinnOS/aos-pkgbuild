@@ -1,3 +1,4 @@
 *
 !/.gitignore
 !/calamares/PKGBUILD
+!/*/PKGBUILD
