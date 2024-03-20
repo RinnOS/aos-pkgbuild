@@ -3,7 +3,7 @@
 pkgname=aos-calamares-config
 _destname="/etc"
 pkgver=24.3
-pkgrel=5
+pkgrel=8
 pkgdesc="Calamares for AmethystOS"
 arch=('any')
 url="https://github.com/RinnOS/${pkgname}"
