@@ -1,0 +1,13 @@
+post_install() {
+    pacman-key --init
+    pacman-key --add /usr/share/pacman/keyrings/aos.gpg
+    pacman-key --lsign-key 1C8A41C8BB8914D07C222395F36261FA966C0582
+    pacman-key --populate
+}
+
+post_upgrade() {
+    pacman-key --init
+    pacman-key --add /usr/share/pacman/keyrings/aos.gpg
+    pacman-key --lsign-key 1C8A41C8BB8914D07C222395F36261FA966C0582
+    pacman-key --populate
+}

@@ -1,0 +1,25 @@
+# Maintainers: Luna Petersson <contact@rinnray.dev>
+
+pkgbase=aos-keyring
+pkgname=("$pkgbase")
+destdir=/usr/share/pacman/keyrings
+pkgver=1
+pkgrel=1
+pkgdesc="AmethystOS keyring"
+arch=('any')
+url="https://github.com/RinnOS"
+license=('GPL3')
+source=('aos-keyring.install' 'aos.gpg')
+
+sha256sums=('80131d451661bfce57ec26ed607fcf735debee7e378b96e1a8a6d70031054aec'
+            '383826daafa1ccad2cd92f7acb3cd07a5bc6f30fa88eac14c9940fe437f0522a')
+
+install=$pkgbase.install
+
+package() {
+    mkdir -p ${pkgdir}/$destdir
+    cd ..
+    mv aos.gpg ${pkgdir}/$destdir
+    install -dm 755 "${pkgdir}/$destdir"
+}
+
